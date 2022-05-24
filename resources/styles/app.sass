@@ -1,0 +1,462 @@
+// =========================================================
+// * Vuetify Material Dashboard - v2.1.0
+// =========================================================
+//
+// * Product Page: https://www.creative-tim.com/product/vuetify-material-dashboard
+// * Copyright 2019 Creative Tim (https://www.creative-tim.com)
+//
+// * Coded by Creative Tim
+//
+// =========================================================
+//
+// * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+// Creative Tim refine style code
+@import variables
+@import '~vuetify/src/styles/tools/_rtl'
+@import '~chartist/dist/scss/chartist'
+@import vuetify-material/sidebar
+@import vuetify-material/appbar
+@import vuetify-material/buttons
+@import vuetify-material/pagination
+@import vuetify-material/footer
+@import vuetify-material/view
+@import vuetify-material/settings
+@import vuetify-material/card
+@import vuetify-material/table
+@import vuetify-material/tab
+@import vuetify-material/notification
+@import vuetify-material/modal
+@import vuetify-material/map
+@import vuetify-material/chip
+@import "cloak"
+@import "integrity"
+
+@import ~vue-ctk-date-time-picker/dist/vue-ctk-date-time-picker.css
+@import "board"
+
+.brand
+    color: #fead37
+    font-family: 'Titillium Web', sans-serif
+    font-size: 50px
+
+.v-btn.v-size--default,
+.v-btn.v-size--large
+    &:not(.v-btn--icon):not(.v-btn--fab)
+        padding: 0 30px !important
+
+.v-btn
+    font-weight: 400
+
+.theme--light.v-list-item .v-list-item__action-text,
+.theme--light.v-list-item .v-list-item__subtitle
+    color: #999
+
+.theme--light.v-text-field>.v-input__control>.v-input__slot:before
+    border-color: #d2d2d2
+
+.v-label.v-label,
+.v-alert.v-alert
+    font-size: $font-size-root
+
+.theme--light .v-content
+    background-color: #eee
+
+.v-card--testimony
+    padding-bottom: 72px
+    margin-bottom: 64px
+
+    .v-avatar
+        position: absolute
+        left: calc(50% - 64px)
+        top: calc(100% - 64px)
+
+.v-settings
+    .v-item-group > *
+        cursor: pointer
+
+    &__item
+        border-width: 3px
+        border-style: solid
+        border-color: transparent !important
+
+        &--active
+            border-color: #00cae3 !important
+
+.v-list-group__activator p
+    margin-bottom: 0
+
+    .v-alert--material
+        margin-top: 32px
+
+        .v-alert__icon
+            top: -36px
+
+        .v-alert__dismissible
+            align-self: flex-start
+            margin: 0 !important
+            padding: 0 !important
+
+.v-card--material
+    &__avatar
+        position: relative
+        top: -64px
+        margin-bottom: -32px
+
+    &__heading
+        position: relative
+        top: -40px
+        transition: .3s ease
+        z-index: 1
+
+.v-card--material-chart
+    p
+        color: #999
+
+    .v-card--material__heading
+        max-height: 185px
+
+        .ct-label
+            color: inherit
+            opacity: .7
+            font-size: 0.975rem
+            font-weight: 100
+
+        .ct-grid
+            stroke: rgba(255, 255, 255, 0.2)
+
+        .ct-series-a .ct-point,
+        .ct-series-a .ct-line,
+        .ct-series-a .ct-bar,
+        .ct-series-a .ct-slice-donut
+            stroke: rgba(255,255,255,.8)
+
+        .ct-series-a .ct-slice-pie,
+        .ct-series-a .ct-area
+            fill: rgba(255,255,255,.4)
+
+.v-snackbar--material
+    margin-top: 32px
+    margin-bottom: 32px
+
+    .v-alert--material,
+    .v-snack__wrapper
+        border-radius: 4px
+
+    .v-snack__content
+        overflow: visible
+        padding: 0
+
+.v-card--material-stats
+    display: flex
+    flex-wrap: wrap
+    position: relative
+
+    > div:first-child
+        justify-content: space-between
+
+    .v-card
+        border-radius: 4px
+        flex: 0 1 auto
+
+    .v-card__text
+        display: inline-block
+        flex: 1 0 calc(100% - 120px)
+        position: absolute
+        top: 0
+        right: 0
+        width: 100%
+
+    .v-card__actions
+        flex: 1 0 100%
+
+.v-tabs--pill
+    .v-tab,
+    .v-tab:before
+        border-radius: 24px
+
+    &.v-tabs--icons-and-text
+        .v-tab,
+        .v-tab:before
+            border-radius: 4px
+
+#dashboard-core-footer
+    a
+        font-size: .825rem
+        font-weight: 500
+        text-decoration: none
+        text-transform: uppercase
+
+#core-navigation-drawer
+    .v-list-group__header.v-list-item--active:before
+        opacity: .24
+
+    .v-list-item
+        &__icon--text,
+        &__icon:first-child
+            justify-content: center
+            text-align: center
+            width: 20px
+
+            +ltr()
+                margin-right: 24px
+                margin-left: 12px !important
+
+            +rtl()
+                margin-left: 24px
+                margin-right: 12px !important
+
+    .v-list--dense
+        .v-list-item
+            &__icon--text,
+            &__icon:first-child
+                margin-top: 10px
+
+    .v-list-group--sub-group
+        .v-list-item
+            +ltr()
+                padding-left: 8px
+
+            +rtl()
+                padding-right: 8px
+
+        .v-list-group__header
+            +ltr()
+                padding-right: 0
+
+            +rtl()
+                padding-right: 0
+
+            .v-list-item__icon--text
+                margin-top: 19px
+                order: 0
+
+            .v-list-group__header__prepend-icon
+                order: 2
+
+                +ltr()
+                    margin-right: 8px
+
+                +rtl()
+                    margin-left: 8px
+
+#upgrade
+    .v-data-table
+        th, td
+            border: none !important
+
+.slimScroll, .slimScroll .v-navigation-drawer__content
+    scrollbar-color: rgba(23, 44, 104, 0.6) rgb(102, 119, 147)
+    scrollbar-width: thin
+
+.v-menu__content.v-menu__content--fixed::-webkit-scrollbar-track,
+.slimScroll::-webkit-scrollbar-track,
+.v-menu__content.menuable__content__active.v-autocomplete__content::-webkit-scrollbar-track,
+.slimScroll .v-navigation-drawer__content::-webkit-scrollbar-track
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3)
+    border-radius: 10px
+    background-color: rgba(255, 255, 255, 0.3)
+    opacity: 0.5
+
+.v-menu__content.v-menu__content--fixed::-webkit-scrollbar,
+.slimScroll::-webkit-scrollbar,
+.v-menu__content.menuable__content__active.v-autocomplete__content::-webkit-scrollbar,
+.slimScroll .v-navigation-drawer__content::-webkit-scrollbar
+    width: 6px
+    background-color: rgba(255, 255, 255, 0.3)
+
+.v-menu__content.v-menu__content--fixed::-webkit-scrollbar-thumb,
+.slimScroll::-webkit-scrollbar-thumb,
+.v-menu__content.menuable__content__active.v-autocomplete__content::-webkit-scrollbar-thumb,
+.slimScroll .v-navigation-drawer__content::-webkit-scrollbar-thumb
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3)
+    background-color: #1464bf
+
+.no-select
+    -webkit-touch-callout: none
+    -webkit-user-select: none
+    -khtml-user-select: none
+    -moz-user-select: none
+    -ms-user-select: none
+    user-select: none
+    cursor: default
+
+h1
+    height: auto
+
+.v-footer
+    padding: 6px 16px
+
+h1
+    text-align: center
+
+.current-color
+    display: inline-block
+    width: 100%
+    height: 16px
+    background-color: #000
+    cursor: pointer
+
+.footer
+    margin-top: 20px
+    text-align: center
+
+.v-select.v-select--chips:not(.v-text-field--single-line).v-text-field--enclosed .v-select__selections
+    min-height: 42px !important
+
+.fullBG
+    background-color: #0093E9
+    background-image: linear-gradient( 112.1deg,  rgba(32,38,57,1) 11.4%, rgba(63,76,119,1) 70.2% )
+
+
+.spaBG
+    background-color: #4736a0
+    background-image: linear-gradient(to right, #3BAF5D 0%, #1CDBAA 100%)
+
+.homeDivider
+    opacity: 1
+    border-width: 0 medium 0 0 !important
+    margin: -5% 5% 0% 5% !important
+
+.siteLogo
+    width: 460px
+    filter: drop-shadow(1px 1px 1px #3d3d3d)
+
+.sitePunchline
+    font-size: 2vw !important
+
+@media (max-width: 600px)
+    .siteLogo
+        width: 50vw
+
+    .sitePunchline
+        font-size: 110% !important
+
+.world
+    width: 100%
+    height: 100%
+    position: absolute
+    opacity: 0.1
+
+.pageWrapper
+    min-height: calc(100% - 20px)
+    z-index: 1
+
+.brand-punch
+    font-weight: bold
+    color: lightpink
+    text-align: right
+    text-transform: uppercase
+    display: table
+    white-space: nowrap
+    line-height: 11px
+    padding: 0px 22px
+    position: relative
+    top: 5px
+
+    &:before
+        content: ''
+        display: table-cell
+        position: relative
+        top: 0.5em
+        width: 100%
+        opacity: 0.3
+    &:after
+        width: 0%
+    &:before
+        right: 1.5%
+    &:after
+        left: 1.5%
+
+.trimmedBG
+    width: 100%
+    height: 185px
+    position: absolute
+
+.based
+    z-index: 0
+
+.elevated
+    z-index: 1
+    position: relative
+
+hr
+    border: 0
+    height: 1px
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0))
+    opacity: 0.3
+
+.br-4
+    border-radius: 4px !important
+
+.capitalize
+    text-transform: capitalize
+
+.productThumb
+    display: block !important
+    margin: 0px auto
+    width: 100% !important
+    height: auto !important
+
+.productThumb img
+    width: 100%
+
+.subContainer
+    height: calc(100vh - 200px)
+
+.subPlayground
+    height: calc(100vh - 200px)
+    overflow: hidden
+    overflow-y: scroll
+
+.settingListToolbar .v-toolbar__content
+    padding: 0px !important
+
+.shopList
+    background: none rgba(56, 244, 185, 0.1)
+.align-center
+    text-align: center
+.align-right
+    text-align: right
+
+.thin-border
+    border: 1px solid lightgrey
+
+.stripes
+    position: absolute
+    top: 0px
+    left: 0px
+    width: 100%
+    height: 100%
+    border-radius: 4px
+    z-index: 5
+    background: repeating-linear-gradient( 45deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) 10px, rgba(0, 0, 0, 0.3) 10px, rgba(0, 0, 0, 0.3) 20px)
+
+hr.dim
+    height: 1px
+    background: none grey
+    width: 100%
+
+.trimmed-text
+    width: 100%
+    white-space: nowrap
+    overflow: hidden
+    text-overflow: ellipsis
+
+.auth-mobile-pad
+    margin-top: -70px
+
+.vdatetime
+    border-radius: 4px
+
+.vdatetime-input
+    color: unset
+
+.kong-text input[type='text']
+    max-height: 50px
+
+.text-xs-center
+    text-align: center !important
+
+.extraInfo b
+    font-weight: bold

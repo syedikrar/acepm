@@ -1,0 +1,51 @@
+{
+    "private": true,
+    "scripts": {
+        "dev": "npm run development",
+        "development": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+        "watch": "npm run development -- --watch",
+        "spa": "npm -area=spa run watch",
+        "all": "npm --area=spa run prod && npm --area=engine run prod",
+        "stage": "npm --area=spa run staging && npm --area=engine run staging",
+        "engine": "npm -area=engine run watch",
+        "watch-poll": "npm run watch -- --watch-poll",
+        "hot": "cross-env NODE_ENV=development node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --hot --disable-host-check --config=node_modules/laravel-mix/setup/webpack.config.js",
+        "prod": "npm run production",
+        "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --no-progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
+    },
+    "devDependencies": {
+        "axios": "^0.21.1",
+        "babel-polyfill": "^6.26.0",
+        "browser-sync": "^2.26.12",
+        "browser-sync-webpack-plugin": "^2.0.1",
+        "cross-env": "^7.0",
+        "date-fns": "^1.29.0",
+        "laravel-mix": "^5.0.1",
+        "lodash": "^4.17.19",
+        "popper.js": "^1.12",
+        "resolve-url-loader": "^3.1.0",
+        "sass": "^1.15.2",
+        "sass-loader": "^8.0.0",
+        "vue": "^2.6.11",
+        "vue-chartist": "^2.3.1",
+        "vue-ctk-date-time-picker": "^2.5.0",
+        "vue-i18n": "^8.21.0",
+        "vue-router": "^3.4.3",
+        "vue-template-compiler": "^2.6.11",
+        "vuetify": "^2.3.8",
+        "vuetify-loader": "^1.4.3",
+        "vuetify-toast-snackbar": "^0.6.1",
+        "vuex": "^3.5.1"
+    },
+    "dependencies": {
+        "@nagoos/vue-image-picker": "^1.0.4",
+        "jquery": "^3.5.1",
+        "laravel-mix-merge-manifest": "^0.1.2",
+        "moment": "^2.27.0",
+        "moment-timezone": "^0.5.32",
+        "vee-validate": "^3.4.5",
+        "vue-axios": "^3.2.4",
+        "vue-social-auth": "^1.4.9",
+        "vue2-editor": "^2.10.2"
+    }
+}
